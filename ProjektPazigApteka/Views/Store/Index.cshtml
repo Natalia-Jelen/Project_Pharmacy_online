@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ProjektPazigApteka.Models.Category>
+
+@{
+    ViewBag.Title = "Store";
+}
+
+    <br />
+    <h4>
+        <p>
+            <span style="color: forestgreen">
+                Select from @Model.Count()
+                categories:
+            </span>
+            
+        </p>
+    </h4>
+
+
+<ul>
+    @foreach (var category in Model)
+    {
+        <li style="font-size: x-large">@Html.ActionLink(category.Name, "Browse", new { category = category.Name })</li>
+    }
+</ul>
+    

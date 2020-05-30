@@ -1,0 +1,31 @@
+﻿@model ProjektPazigApteka.Models.Category
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<div class="category">
+    <h3><span style="color: forestgreen"><em>@Model.Name</em> Items</span></h3>
+
+    <ul id="item-list">
+        @foreach (var item in Model.Items)
+        {
+        
+            <br >
+            <a href="@Url.Action("Details",
+                    new { id = item.ItemId })">
+                <span>@item.Title</span>
+                <p></p>
+                    <img width="120" height="120" src="@item.ItemArtUrl" />
+
+
+            </a>
+            <br /> 
+            <br />
+            <br />
+        
+
+        }
+    </ul>
+</div>
+

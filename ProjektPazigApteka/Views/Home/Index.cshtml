@@ -1,0 +1,120 @@
+﻿
+<br />
+<br />
+<br />
+<div id="carouselBlk">
+    <div id="myCarousel" class="carousel slide" style="height: 500px">
+        <div class="carousel-inner" style="height: 500px">
+            <div class="item active">
+
+                <div class="container">
+                    <a href="/Account/Register"><img src="~/themes/images/carousel/11.png" alt="" /></a>
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <a href="/Account/Register"><img src="~/themes/images/carousel/222.png" alt="" /></a>
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <a href="/Account/Register"><img src="~/themes/images/carousel/33.png" alt="" /></a>
+                    <div class="carousel-caption">
+                    </div>
+
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <a href="/Account/Register"><img src="~/themes/images/carousel/44.png" alt="" /></a>
+                    <div class="carousel-caption">
+                    </div>
+
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <a href="/Account/Register"><img src="~/themes/images/carousel/55.png" alt="" /></a>
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <a href="/Account/Register"><img src="~/themes/images/carousel/66.png" alt="" /></a>
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <a href="/Account/Register"><img src="~/themes/images/carousel/77.png" alt="" /></a>
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+</div>
+
+
+<div class="container">
+ 
+        <button class="btn btn-warning btn-lg" style="width:150px "><a href="/Store/Browse?Category=Medicines">Medicines</a></button>
+        <button class="btn btn-warning btn-lg" style="width:100px "><a href="/Store/Browse?Category=Tea">  Tea</a></button>
+        <button class="btn btn-warning btn-lg" style="width:110px "><a href="/Store/Browse?Category=Juices">Juices</a></button>
+        <button class="btn btn-warning btn-lg"style="width:120px "><a href="/Store/Browse?Category=For%20him">For him</a></button>
+        <button class="btn btn-warning btn-lg"style="width:120px "><a href="/Store/Browse?Category=For%20her">For her</a></button>
+        <button class="btn btn-warning btn-lg"style="width:200px "><a href="/Store/Browse?Category=Baby%20accesories">Baby accessories</a></button>
+
+</div>
+
+
+<h3><span style="color: forestgreen">Top 10 products</span>
+    </h3>
+
+<table>
+
+
+    @foreach (var item in Model)
+    {
+
+
+        <tr style="text-align: center " valign="center">
+            <td rowspan="10">
+                <a href="@Url.Action("Details","Store",new { id = item.ItemId })">
+                    <img width="180" height="180" alt="@item.Title" src="@item.ItemArtUrl" />
+                </a>
+
+
+
+                <br />
+                <span>@item.Title</span>
+
+
+
+                @String.Format("{0:F}", item.Price)$
+                <p class="button1">
+
+                    @Html.ActionLink("Add to cart", "AddToCart",
+            "ShoppingCart", new { id = item.ItemId }, "")
+                </p>
+
+            </td>
+        </tr>
+
+
+
+
+    }
+
+
+
+</table>

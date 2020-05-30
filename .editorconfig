@@ -1,0 +1,7 @@
+﻿[*.{cs,vb}]
+
+# IDE0044: Dodaj modyfikator tylko do odczytu
+dotnet_style_readonly_field = true:suggestion
+
+# IDE0005: Dyrektywa using jest niepotrzebna.
+dotnet_diagnostic.IDE0005.severity = none
